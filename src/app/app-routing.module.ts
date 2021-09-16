@@ -1,3 +1,4 @@
+import { DepartamentoModule } from './components/admin/departamento/departamento.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/public/login/login.component';
@@ -12,6 +13,12 @@ const routes: Routes = [
       .then(m=>m.PainelModule),
     canActivate: [AuthguardService]
   },
+  {
+    path: 'admin/departamento',
+    loadChildren:()=>import('./components/admin/departamento/departamento.module')
+      .then(m => m.DepartamentoModule),
+    canActivate: [AuthguardService]
+  }
 ];
 
 @NgModule({
