@@ -1,5 +1,3 @@
-import { Departamento } from './../../../models/departamento.model';
-import { Observable } from 'rxjs';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
