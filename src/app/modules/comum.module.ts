@@ -9,6 +9,12 @@ import { PrimeNGModule } from './primeng.module';
     FormsModule,
     ReactiveFormsModule,
     PrimeNGModule
+  ],
+  exports:[
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    PrimeNGModule
   ]
 })
 export class ComumModule { }
