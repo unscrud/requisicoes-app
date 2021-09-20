@@ -3,7 +3,6 @@ import { DepartamentoRoutingModule } from './departamento-routing.module';
 import { DepartamentoComponent } from './departamento.component';
 import { ComumModule } from '../../../modules/comum.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DialogModule } from "primeng/dialog";
 
 @NgModule({
   declarations: [
@@ -12,8 +11,7 @@ import { DialogModule } from "primeng/dialog";
   imports: [
     ComumModule,
     ReactiveFormsModule,
-    DepartamentoRoutingModule,
-    DialogModule
+    DepartamentoRoutingModule
   ]
 })
 export class DepartamentoModule {}

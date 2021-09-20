@@ -16,15 +16,14 @@ export class DepartamentoComponent implements OnInit {
   displayDialogDepartamento: boolean;
   form: FormGroup;
 
-  constructor( private departamentoService: DepartamentoService, private fb: FormBuilder ) {
-   }
+  constructor( private departamentoService: DepartamentoService, private fb: FormBuilder ) {}
 
   configForm(){
     this.form = this.fb.group({
       id: new FormControl(),
       nome: new FormControl('', Validators.required),
       telefone: new FormControl('')
-    })
+    });
   }
 
   ngOnInit() {
