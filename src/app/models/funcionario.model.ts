@@ -2,9 +2,10 @@ import { Departamento } from './departamento.model';
 import { Model } from "../core/model";
 
 export class Funcionario extends Model {
-  nome: string = '';
-  funcao: string = '';
-  email: string = '';
-  ultimoAcesso: Date = new Date();
-  departamento: Departamento = new Departamento();
+  nome: string;
+  funcao: string;
+  email: string;
+  foto: string;
+  ultimoAcesso: any;
+  departamento: Departamento;
 }
