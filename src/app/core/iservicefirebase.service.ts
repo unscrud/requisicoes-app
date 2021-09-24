@@ -8,7 +8,11 @@ import { plainToClass } from 'class-transformer';
 export abstract class ServiceFirebase<T extends Model> implements ICrud<T>{
   ref: AngularFirestoreCollection<T>;
 
-  constructor(protected type: {new():T;}, protected firestore: AngularFirestore, public path: string){
+  constructor(
+    protected type: {new():T;},
+    protected firestore: AngularFirestore,
+    public path: string
+  ){
     this.ref = this.firestore.collection<T>(this.path);
   }
 
