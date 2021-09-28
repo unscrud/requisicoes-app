@@ -1,8 +1,9 @@
+import { NgSelectModule } from '@ng-select/ng-select';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { RequisicaoRoutingModule } from './requisicao-routing.module';
 import { RequisicaoComponent } from './requisicao.component';
+import { ComumModule } from 'src/app/modules/comum.module';
 
 
 @NgModule({
@@ -10,8 +11,9 @@ import { RequisicaoComponent } from './requisicao.component';
     RequisicaoComponent
   ],
   imports: [
-    CommonModule,
-    RequisicaoRoutingModule
+    ComumModule,
+    RequisicaoRoutingModule,
+    NgSelectModule
   ]
 })
 export class RequisicaoModule { }
