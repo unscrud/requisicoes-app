@@ -1,4 +1,3 @@
-import { DepartamentoModule } from './components/admin/departamento/departamento.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/public/login/login.component';
