@@ -14,7 +14,62 @@
       </h3>
     </div>
 
-    <div class="card-body col-lg-12 col-centered"></div>
+    <div class="card-body col-lg-12 col-centered">
+      <table
+        class="table table-striped table-hover table-bordered col-centered"
+      >
+        <thead class="thead-dark">
+          <tr>
+            <th class="text-center">Abertura</th>
+            <th class="text-center">Última atualização</th>
+            <th class="text-center">Departamento</th>
+            <th class="text-center">Status</th>
+            <th class="text-center">Movimentações</th>
+            <th class="text-center">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let requisicao of requisicoes$ | async">
+            <td class="text-center">
+              {{ requisicao.dataAbertura.toDate() | date: "dd/MM/yyyy HH:mm" }}
+            </td>
+            <td class="text-center">
+              {{
+                requisicao.ultimaAtualizacao?.toDate()
+                  | date: "dd/MM/yyyy HH:mm"
+              }}
+            </td>
+            <td class="text-center">{{ requisicao.destino.nome }}</td>
+            <td class="text-center">{{ requisicao.status }}</td>
+            <td class="text-center">
+              <span class="badge badge-pill badge-secundary">
+                {{
+                  !requisicao.movimentacoes?.length
+                    ? "0"
+                    : requisicao.movimentacoes?.length
+                }}
+              </span>
+            </td>
+            <td class="text-center">
+              <button
+                (click)="selecionaRequisicao(requisicao)"
+                class="btn btn-success"
+                type="button"
+              >
+                <i class="fas fa-edit"></i>
+              </button>
+              <button
+                (click)="delete(requisicao)"
+                class="btn btn-danger"
+                type="button"
+              >
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
