@@ -81,7 +81,7 @@ export class RequisicaoComponent implements OnInit {
     this.setValorPadrao();
   }
 
-  selecionarRequisicao(req: Requisicao){
+  selecionaRequisicao(req: Requisicao){
     this.edit = true;
     this.displayDialogRequisicao = true;
     this.form.setValue(req);
