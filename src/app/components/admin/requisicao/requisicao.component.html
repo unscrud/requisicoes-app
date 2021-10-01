@@ -17,3 +17,51 @@
     <div class="card-body col-lg-12 col-centered"></div>
   </div>
 </div>
+
+<p-dialog
+  header="Dados da Requisição"
+  [style]="{ width: '80vw' }"
+  [contentStyle]="{ overflow: 'visible' }"
+  [(visible)]="displayDialogRequisicao"
+  [responsive]="true"
+  [modal]="true"
+>
+  <form [formGroup]="form" class="p-fluid p-formgrid p-grid" *ngIf="form.value">
+    <div class="p-field p-col-12 p-md-12">
+      <label for="departamento">Destino*:</label>
+      <ng-select
+        [items]="departamentos$ | async"
+        bindLabel="nome"
+        formControlName="destino"
+      >
+      </ng-select>
+    </div>
+    <div class="p-field p-col-12 p-md-12">
+      <label for="descricao">Descrição*:</label>
+      <textarea
+        pInputTextarea
+        cols="30"
+        rows="5"
+        formControlName="descricao"
+      ></textarea>
+    </div>
+  </form>
+
+  <div
+    *ngIf="form.controls['destino'].errors || form.controls['descricao'].errors"
+    class="text-warning text-left"
+  >
+    *Preenchimento Obrigatório
+  </div>
+
+  <div class="p-d-flex p-jc-end">
+    <button
+      [disabled]="!form.valid"
+      type="button"
+      class="btn btn-primary"
+      (click)="save()"
+    >
+      <i class="fas check circle"></i> {{ edit ? "Atualizar" : "Salvar" }}
+    </button>
+  </div>
+</p-dialog>
