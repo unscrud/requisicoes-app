@@ -1,3 +1,4 @@
+import { MovimentacaoComponent } from './../movimentacao/movimentacao.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgModule } from '@angular/core';
 
@@ -8,7 +9,8 @@ import { ComumModule } from 'src/app/modules/comum.module';
 
 @NgModule({
   declarations: [
-    RequisicaoComponent
+    RequisicaoComponent,
+    MovimentacaoComponent
   ],
   imports: [
     ComumModule,
