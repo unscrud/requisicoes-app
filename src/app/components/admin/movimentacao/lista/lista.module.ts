@@ -1,5 +1,6 @@
+import { NgSelectModule } from '@ng-select/ng-select';
+import { ComumModule } from 'src/app/modules/comum.module';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { ListaRoutingModule } from './lista-routing.module';
 import { ListaComponent } from './lista.component';
@@ -10,8 +11,9 @@ import { ListaComponent } from './lista.component';
     ListaComponent
   ],
   imports: [
-    CommonModule,
-    ListaRoutingModule
+    ComumModule,
+    ListaRoutingModule,
+    NgSelectModule
   ]
 })
 export class ListaModule { }
