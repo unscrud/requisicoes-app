@@ -73,6 +73,11 @@
   </div>
 </div>
 
+<app-movimentacao
+  *ngIf="funcionarioLogado"
+  [funcionarioLogado]="funcionarioLogado"
+></app-movimentacao>
+
 <p-dialog
   header="Dados da Requisição"
   [style]="{ width: '80vw' }"
