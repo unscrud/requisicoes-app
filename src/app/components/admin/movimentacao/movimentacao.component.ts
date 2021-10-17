@@ -15,7 +15,7 @@ import { Requisicao, Movimentacao } from 'src/app/models/requisicao.model';
 export class MovimentacaoComponent implements OnInit {
 
   @Input() funcionarioLogado: Funcionario;
-  requisicoes$: Observable<Requisicao[]> | any;
+  requisicoes$: Observable<Requisicao[]> | any;//e aqui
   movimentacoes: Movimentacao[];
   requisicaoSelecionada: Requisicao;
   edit: boolean;
@@ -32,14 +32,13 @@ export class MovimentacaoComponent implements OnInit {
   ngOnInit(): void {
     this.configForm();
     this.carregaStatus();
-    this.listaRequisicoesDepartamento();
+    this.listaRequisicoesDepartamento();//e aqui
   }
 
-  listaRequisicoesDepartamento() {
+  listaRequisicoesDepartamento() {// o problema está aqui
     this.requisicoes$ = this.requisicaoService.list().pipe(
-      map( (reqs: Requisicao[]) => {
-        reqs.filter(r => r.destino.nome === this.funcionarioLogado.departamento.nome)
-      }));
+      map( (reqs: Requisicao[]) => reqs.filter(
+        r => r.destino.nome === this.funcionarioLogado.departamento.nome)));
   }
 
   configForm() {
