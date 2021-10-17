@@ -4,7 +4,7 @@ import { LoginComponent } from './components/public/login/login.component';
 import { AuthguardService } from './services/authguard.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full'},
+  { path: '', redirectTo: 'admin/painel', pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
   {
     path: 'admin/painel',
@@ -39,7 +39,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled', relativeLinkResolution:'legacy'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
