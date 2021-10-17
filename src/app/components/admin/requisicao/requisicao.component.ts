@@ -33,7 +33,7 @@ export class RequisicaoComponent implements OnInit {
     private fb: FormBuilder
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.departamentos$ = this.departamentoService.list(),
     this.configForm(),
     this.recuperaFuncionario()
