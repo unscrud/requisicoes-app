@@ -9,10 +9,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email: string = '';
-  senha: string = '';
-  mensagem: string = '';
-  emailEnviado: boolean = false;
+  email: string;
+  senha: string;
+  mensagem: string;
+  emailEnviado: boolean;
 
   constructor(private authServ: AuthenticationService, private router: Router) { }
 
@@ -52,8 +52,8 @@ export class LoginComponent implements OnInit {
         this.mensagem = `Erro ao logar. ${detalhes}`;
       });
 
-    } finally {
-      console.log("fim")
+    } catch (erro)  {
+      this.mensagem = `Erro ao Logar. Detalhes: ${erro}`;
     }
   }
 
