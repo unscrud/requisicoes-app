@@ -85,6 +85,12 @@
                   class="alert alert-dismissible alert-danger"
                   *ngIf="mensagem && !emailEnviado"
                 >
+                  {{ mensagem }}
+                </div>
+                <div
+                  class="alert alert-dismissible alert-info"
+                  *ngIf="emailEnviado"
+                >
                   Foi enviado um email para <strong>{{ email }}</strong>
                 </div>
               </form>
